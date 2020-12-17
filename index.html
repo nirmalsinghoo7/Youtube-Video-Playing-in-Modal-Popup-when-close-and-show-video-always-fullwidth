@@ -4,74 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
+    <meta name="description" content="How to show multiple videos in bootstrap modal and stop video when close the popup. Can’t stop sound after closing Youtube video in modal.">
+    <meta name="keywords" content="Can’t stop sound after closing Youtube video in modal, How to stop youtube video after closing modal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h4 class="text-center mt-5">
-      While playing youtube video in Popup & after that closing the popup sound
-      doesn't off automatically. Sound issue solved without using of any CDN. We
-      used only JQuery to solve sound issue.
-    </h4>
+    <div class="container">
+    <h4 class="text-center mt-5">While playing youtube video in Popup & after that closing the popup sound doesn't off automatically. Sound issue solved without using of any CDN. We used only JQuery to solve sound issue.    </h4>
     <h5 class="text-center mt-4">
       <strong>Play videos & see result by yourself !!</strong>
     </h5>
     <div class="d-flex justify-content-center py-5 my-5">
-      <button class="video-btn btn btn-primary mx-5" data-toggle="modal" data-target="#MakeModal" data-src="https://www.youtube.com/embed/EngW7tLk6R8"> Play video 1 </button>
-      <button class="video-btn btn btn-primary mx-5" data-toggle="modal" data-target="#MakeModal" data-src="https://www.youtube.com/embed/3H18GzNN13A"> Play video 2 </button>
-      <button class="video-btn btn btn-primary mx-5" data-toggle="modal" data-target="#MakeModal" data-src="https://www.youtube.com/embed/URVHRhBSjj8"> Play video 3 </button>
+      <button class="video-btn btn btn-primary mx-5" data-toggle="modal" data-target="#mutipleYoutubeModals" data-src="https://www.youtube.com/embed/EngW7tLk6R8"> Play video 1 </button>
+      <button class="video-btn btn btn-primary mx-5" data-toggle="modal" data-target="#mutipleYoutubeModals" data-src="https://www.youtube.com/embed/3H18GzNN13A"> Play video 2 </button>
+      <button class="video-btn btn btn-primary mx-5" data-toggle="modal" data-target="#mutipleYoutubeModals" data-src="https://www.youtube.com/embed/URVHRhBSjj8"> Play video 3 </button>
 
     </div>
-    <div
-      class="modal fade"
-      id="MakeModal"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-    >
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="mutipleYoutubeModals" role="dialog" aria-labelledby="myModalLabel" >
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
           <div class="modal-header text-right pull-right float-right">
             <button type="button" class="btn btn-default" data-dismiss="modal">
               Click here to close popup
             </button>
           </div>
-          <div class="modal-body popup__overlay">
-            <iframe
-              width="100%"
-              height="315"
-              src=""
-              id="video"
-              frameborder="0"
-              allowscriptaccess="always"
-              allow="autoplay"
-              allowfullscreen
-            ></iframe>
+            <div class="modal-body popup__overlay"> <iframe class="videomodal" src="" id="video" frameborder="0" allowscriptaccess="always" allow="autoplay" allowfullscreen ></iframe>
           </div>
         </div>
       </div>
     </div>
     <script>
-      $(document).ready(function () {
-        var $videoSrc;
-        $(".video-btn").click(function () {
-          $videoSrc = $(this).data("src");
+      jQuery(document).ready(function () {
+        var videoSrc;
+        jQuery(".video-btn").click(function () {
+          videoSrc = jQuery(this).data("src");
         });
-        $("#MakeModal").on("shown.bs.modal", function (e) {
-          $("#video").attr(
-            "src",
-            $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0"
-          );
+        jQuery("#mutipleYoutubeModals").on("shown.bs.modal", function (e) {
+          jQuery("#video").attr( "src", videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" );
         });
-        $("#MakeModal").on("hide.bs.modal", function (e) {
-          $("#video").attr("src", $videoSrc);
+        jQuery("#mutipleYoutubeModals").on("hide.bs.modal", function (e) {
+          jQuery("#video").attr("src", videoSrc);
         });
       });
     </script>
+    </div>
   </body>
 </html>
-Can’t stop sound after closing Youtube video in modal
-How to stop youtube video after closing modal
