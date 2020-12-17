@@ -10,10 +10,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .modal-backdrop.show { opacity: 0.7; }
+      .videomodal{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+      .modal-body{padding-bottom: 56.25%;}
+      .modal-content{overflow: visible !important;-webkit-box-shadow: 0 7px 25px 0px rgba(30, 37, 45, 0.75);box-shadow: 0 7px 25px 0px rgba(30, 37, 45, 0.75);}
+    </style>
   </head>
   <body>
     <div class="container">
-    <h4 class="text-center mt-5">While playing youtube video in Popup & after that closing the popup sound doesn't off automatically. Sound issue solved without using of any CDN. We used only JQuery to solve sound issue.    </h4>
+    <h4 class="text-center mt-5">While playing YouTube video in Popup & after that closing the popup sound doesn't off automatically. Sound issue solved without using of any CDN. We used only JQuery to solve sound issue.    </h4>
     <h5 class="text-center mt-4">
       <strong>Play videos & see result by yourself !!</strong>
     </h5>
@@ -24,7 +30,7 @@
 
     </div>
     <div class="modal fade" id="mutipleYoutubeModals" role="dialog" aria-labelledby="myModalLabel" >
-      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
           <div class="modal-header text-right pull-right float-right">
             <button type="button" class="btn btn-default" data-dismiss="modal">
